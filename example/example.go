@@ -3,8 +3,8 @@ package example
 import (
 	"log"
 
-	bridgeutil "github.com/CoolBitX-Technology/sygna-bridge-util-go"
 	"github.com/iancoleman/orderedmap"
+	bridgeutil "github.com/sygnaio/sygna-bridge-util-go"
 )
 
 const domain = bridgeutil.SygnaBridgeAPITestDomain

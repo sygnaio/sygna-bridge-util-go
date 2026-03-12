@@ -1,4 +1,4 @@
-module github.com/CoolBitX-Technology/sygna-bridge-util-go
+module github.com/sygnaio/sygna-bridge-util-go
 
 go 1.25
 
