@@ -5,7 +5,7 @@ This is a Golang library to help you build servers/services within Sygna Bridge 
 ## Installation
 
 ```shell
-go get github.com/CoolBitX-Technology/sygna-bridge-util-go
+go get github.com/sygnaio/sygna-bridge-util-go
 ```
 
 ## Import
@@ -13,7 +13,7 @@ go get github.com/CoolBitX-Technology/sygna-bridge-util-go
 ```golang
 
 import (
-	bridgeutil "github.com/CoolBitX-Technology/sygna-bridge-util-go"
+	bridgeutil "github.com/sygnaio/sygna-bridge-util-go"
 )
 ```
 
