@@ -515,3 +515,19 @@ func postAddressValidation() {
 	strResponse, _ := bridgeutil.OrderedMapToString(response)
 	log.Printf("PostAddressValidation response: %v\n", strResponse)
 }
+
+func getCurrencyMapping() {
+	queryParam := orderedmap.New()
+	queryParam.Set("currency_id", "sygna:0x80000090")
+
+	api := &bridgeutil.BridgeAPI{
+		APIDomain: domain,
+		APIKey:    originatorAPIKey,
+	}
+	response, err := api.GetCurrencyMapping(queryParam)
+	if err != nil {
+		panic(err)
+	}
+	strResponse, _ := bridgeutil.OrderedMapToString(response...)
+	log.Printf("GetCurrencyMapping response: %v\n", strResponse)
+}

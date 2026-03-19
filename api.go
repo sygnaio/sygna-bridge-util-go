@@ -437,3 +437,25 @@ func (api *BridgeAPI) PostAddressValidation(param *orderedmap.OrderedMap) (*orde
 	}
 	return response.(*orderedmap.OrderedMap), nil
 }
+
+func (api *BridgeAPI) GetCurrencyMapping(queryParams *orderedmap.OrderedMap) ([]*orderedmap.OrderedMap, error) {
+
+	param := map[string]interface{}{}
+
+	if queryParams != nil {
+		for _, k := range queryParams.Keys() {
+			v, _ := queryParams.Get(k)
+			param[k] = v
+		}
+	}
+	response, err := request(api, get, "v2/bridge/transaction/currency-mapping", param, nil)
+
+	if err != nil {
+		return nil, err
+	}
+
+	supportedCoins, _ := response.(*orderedmap.OrderedMap).Get("items")
+	mapSupportedCoins := castArrayToOrderedMapArray(supportedCoins)
+
+	return mapSupportedCoins, nil
+}
